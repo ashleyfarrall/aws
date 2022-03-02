@@ -1,0 +1,25 @@
+Region: eu-west-1
+Image:
+  Os: centos7
+HeadNode:
+  InstanceType: m5.xlarge
+  Networking:
+    SubnetId: 
+  Ssh:
+    KeyName: poc2home
+  LocalStorage:
+    RootVolume:
+      Size: 200
+      VolumeType: gp3
+Scheduling:
+  Scheduler: slurm
+  SlurmQueues:
+  - Name: queue1
+    ComputeResources:
+    - Name: c54xlarge
+      InstanceType: c5.4xlarge
+      MinCount: 0
+      MaxCount: 20
+    Networking:
+      SubnetIds:
+      - 
