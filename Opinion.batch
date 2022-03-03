@@ -3,7 +3,7 @@
 
 # Submit this script with: sbatch <this-filename>
 
-#SBATCH -n 20
+#SBATCH -n 300 # number of processes
 #SBATCH --qos=normal # qos
 #SBATCH -J "mpi"   # job name
 
