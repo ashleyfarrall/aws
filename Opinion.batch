@@ -3,7 +3,9 @@
 
 # Submit this script with: sbatch <this-filename>
 
-#SBATCH -n 300 # number of processes
+#SBATCH --nodes=10
+#SBATCH --ntasks-per-node=36
+##SBATCH --mem=70000
 #SBATCH --qos=normal # qos
 #SBATCH -J "mpi"   # job name
 
@@ -12,4 +14,9 @@
 ## /SBATCH -e slurm.%N.%j.err # STDERR
 
 # LOAD MODULES, INSERT CODE, AND RUN YOUR PROGRAMS HERE
+
+module purge
+## module load anaconda3/2021.11
+module load openmpi/4.1.1
+
 mpirun python PoincareTest.py > DivOpinion.log
